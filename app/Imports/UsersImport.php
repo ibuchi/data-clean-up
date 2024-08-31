@@ -34,8 +34,9 @@ class UsersImport implements
             'fullname' => $name,
             'username' => $this->getUserName($name),
             'email' => $this->getEmail($name),
+            'gender' => $row['gender'],
             'password_field' => $this->getPasswordField($name),
-            'role' => '3',
+            'role' => '2',
             'department' => 'All',
             'status' => 1,
             'password' => $this->getPasswordField($name)
@@ -92,10 +93,10 @@ class UsersImport implements
     {
         $nameParts = explode(' ', strtolower($name));
         if (count($nameParts) >= 2) {
-            return $nameParts[0][0] . $nameParts[1] . '@randlegeneralhospital.com';
+            return $nameParts[0][0] . $nameParts[1] . '@onikangeneralhospital.com';
         }
 
-        return $nameParts[0] . '@randlegeneralhospital.com';
+        return $nameParts[0] . '@onikangeneralhospital.com';
     }
 
     public function getUserName(string $name): string

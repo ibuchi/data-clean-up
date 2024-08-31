@@ -11,7 +11,7 @@ Route::get('/', function () {
 
     $users = User::all();
 
-    $file_heading = 'Randle General Hospital' . ' - ' . $users->first()->created_at->toDayDateTimeString();
+    $file_heading = 'Onikan General Hospital' . ' - ' . $users->first()->created_at->toDayDateTimeString();
 
     $users = $users->map(
         function ($user) {
@@ -24,7 +24,7 @@ Route::get('/', function () {
         }
     );
 
-    return Excel::download(new UsersExport($users, $file_heading), "Randle-General-Hospital-Users-Records.xlsx");
+    return Excel::download(new UsersExport($users, $file_heading), "Onikan-General-Hospital-Users-Records.xlsx");
 });
 
 require __DIR__.'/auth.php';
